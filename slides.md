@@ -48,6 +48,62 @@ Presentation slides for developers
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
 -->
+---
+transition: slide-left
+---
+
+<<< @/snippets/initial-frontmatter.md {all|1-2|3-5|6-12|13-14|15-17|18-19|20-21}
+
+---
+transition: slide-right
+---
+
+# Vue component syntax vs MDC syntax
+
+<div grid="~ cols-2 gap-2" m="t-2">
+
+```vue-html
+<Card type="idea">
+  This is the title
+
+  <template #content>
+    I'm some _cool_ **content**
+  </template>
+</Card>
+```
+
+```mdc
+::card{type="warning"}
+  This is the title
+
+  #content
+  I'm some _cool_ **content**
+::
+```
+
+<Card type="idea">
+  This is the title
+
+  <template #content>
+    I'm some _cool_ **content**
+  </template>
+</Card>
+
+::card{type="warning"}
+  This is the title
+
+  #content
+  I'm some _cool_ **content**
+::
+
+</div>
+
+---
+transition: fade-in
+---
+
+<<< @/snippets/initial-frontmatter.md {22-27}
+
 
 ---
 transition: fade-out
@@ -193,7 +249,7 @@ Notes can also sync with clicks
 level: 2
 ---
 
-# Shiki Magic Move
+# Shiki Magic Movesss
 
 Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
 
