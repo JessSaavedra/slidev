@@ -1,16 +1,10 @@
 ---
-# You can also start simply with 'default'
-theme: seriph
+theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
-# some information about your slides (markdown enabled)
-title: Welcome to Slidev
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+title: Programá tus slides con Slidev
+info: 10Pines Conf 2025 - Jess
 # apply unocss classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
@@ -28,13 +22,8 @@ seoMeta:
   # ogImage: https://cover.sli.dev
 ---
 
-# Welcome to Slidev
-
-Presentation slides for developers
-
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
+# **Programá tus slides**
+## *usando Slidev*
 
 <div class="abs-br m-6 text-xl">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
@@ -45,22 +34,133 @@ Presentation slides for developers
   </a>
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
 ---
+layout: image-right
+image: https://pbs.twimg.com/media/GQBCg1zWEAAyVwV?format=jpg&name=large
 transition: slide-left
 ---
 
-<<< @/snippets/initial-frontmatter.md {all|1-2|3-5|6-12|13-14|15-17|18-19|20-21}
+# <span v-mark.highlight.yellow>Anthony Fu</span>
+
+Creador de Slidev
+
+<div class="mt-16 flex flex-col gap-lg">
+  <div>
+    Working at <a href="https://nuxtlabs.com" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/nuxtlabs.png')"></span>NuxtLabs</a> / <a href="https://vercel.com" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/vercel.png')"></span>Vercel</a>
+  </div>
+  <div>
+    Creator of <a href="https://github.com/vitest-dev/vitest" class="markdown-magic-link  " target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/vitest-dev.png');"></span>Vitest</a> <a href="https://github.com/slidevjs/slidev" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/slidevjs.png')"></span>Slidev</a> <a href="https://github.com/vueuse/vueuse" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/vueuse.png');"></span>VueUse</a> <a href="https://github.com/unocss/unocss" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/unocss.png');"></span>UnoCSS</a> <a href="https://github.com/elk-zone/elk" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/elk-zone.png');"></span>Elk</a> <a href="https://github.com/type-challenges/type-challenges" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/type-challenges.png');"></span>Type Challenges</a>
+  </div>
+  <div>
+    Core team of <a href="https://github.com/vuejs/core" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://vuejs.org/logo.svg');"></span>Vue</a> <a href="https://github.com/nuxt/nuxt" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://nuxt.com/assets/design-kit/icon-green.svg');"></span>Nuxt</a> <a href="https://github.com/vitejs/vite" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://vitejs.dev/logo.svg');"></span>Vite</a>
+  </div>
+  <div>
+    Maintaining <a href="https://github.com/shikijs/shiki" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/shikijs.png');"></span>Shiki</a> <a href="https://github.com/twoslashes/twoslash" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/twoslashes.png');"></span>Twoslash</a> <a href="https://github.com/eslint-stylistic/eslint-stylistic" class="markdown-magic-link" target="_blank" rel="noopener"><span class="markdown-magic-link-image" style="background-image: url('https://github.com/eslint-stylistic.png');"></span>ESLint Stylistic</a>
+  </div>
+</div>
+
+<div class="face">
+  <span v-mark.circle.yellow="{at: 1, strokeWidth: 10 }"></span>
+</div>
+
+<style>
+.face {
+  left: 59%;
+  position: absolute;
+  top: 18%;
+}
+
+.face span {
+  display: block;
+  height: 150px;
+  width: 150px;
+}
+
+.markdown-magic-link {
+    display: inline-flex;
+    align-items: center;
+    transform: translateY(3px);
+    line-height: 100%;
+    color: #686868;
+    background: rgba(136, 136, 136, 0.133);
+    gap: 0.25rem;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.375rem;
+    border-width: 0 !important;
+    font-size: 0.85em;
+}
+
+.markdown-magic-link:hover {
+    color: #454545;
+    background: rgba(136, 136, 136, 0.2);
+}
+
+.markdown-magic-link-image {
+    display: inline-block;
+    height: 1.1em;
+    width: 1.1em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 2px;
+}
+</style>
 
 ---
-transition: slide-right
+transition: slide-up
+---
+
+<<< @/snippets/initial-frontmatter.md {all|1-2|3-5|6-11|12-13}
+
+---
+layout: two-cols
+transition: slide-down
+layoutClass: gap-3xl
+---
+
+# ¿Qué es UnoCSS?
+
+Es un engine para generar atomic CSS. Está fuertemente inspirado en Windi CSS (que a su vez se autoproclamó como "la alternativa on-demand a Tailwind")
+
+
+````md magic-move {lines: true}
+
+```scss
+// style.scss
+
+@for $i from 1 through 10 {
+  .m-#{$i} {
+    margin: $i / 4 rem;
+  }
+}
+```
+
+```scss
+.m-1 { margin: 0.25 rem; }
+.m-2 { margin: 0.5 rem; }
+/* ... */
+.m-10 { margin: 2.5 rem; }
+```
+
+````
+
+::right::
+
+<img src="https://antfu.me/images/unocss-traditional-way.png" />
+
+---
+transition: slide-up
+---
+
+<<< @/snippets/initial-frontmatter.md {14-16|17-18|19-20}
+
+---
+transition: slide-down
 ---
 
 # Vue component syntax vs MDC syntax
 
-<div grid="~ cols-2 gap-2" m="t-2">
+<div grid="~ cols-2 gap-col-4xl gap-row-sm" m="t-2">
 
 ```vue-html
 <Card type="idea">
@@ -99,31 +199,25 @@ transition: slide-right
 </div>
 
 ---
-transition: fade-in
+transition: slide-left
 ---
 
-<<< @/snippets/initial-frontmatter.md {22-27}
-
+<<< @/snippets/initial-frontmatter.md {22-26}
 
 ---
 transition: fade-out
 ---
 
-# What is Slidev?
+# Soporte para LaTeX
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+$$ {1|3|all}
+\begin{aligned}
+\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
+\nabla \cdot \vec{B} &= 0 \\
+\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
+\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
+\end{aligned}
+$$
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.

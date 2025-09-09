@@ -8,7 +8,6 @@ title: Welcome to Slidev
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
-
   Learn more at [Sli.dev](https://sli.dev)
 # apply unocss classes to the current slide
 class: text-center
