@@ -107,10 +107,103 @@ Creador de Slidev
 </style>
 
 ---
+layout: default
+---
+
+# Instalación de proyecto
+
+::code-group
+
+```sh [pnpm]
+# If you haven't installed pnpm
+npm i -g pnpm
+
+pnpm create slidev
+```
+
+```sh [npm]
+# Not recommended -
+# NPM will download the packages each time you create a new project,
+# which is slow and takes up a lot of space
+
+npm init slidev@latest
+```
+
+```sh [yarn]
+yarn create slidev
+```
+
+```sh [bun]
+bun create slidev
+```
+
+```sh [deno]
+deno init --npm slidev
+```
+
+::
+
+---
+layout: two-cols
+layoutClass: gap-3xl
+---
+
+# Frontmatter
+
+Es una forma de identificar metadata en archivos markdown, generalmente se utiliza el formato YAML
+
+```md [slides.md]
+---
+title: "Mi título"
+description: "Descripción"
+tags:
+    - JavaScript
+    - Markdown
+---
+
+# Título de mi sección
+
+Contenido de mi archivo
+```
+
+::right::
+
+<div v-click>
+  <LightOrDark width="100" alt="astro logo">
+    <template #dark="props">
+      <img src="https://astro.build/assets/press/astro-logo-light.png" v-bind="props"/>
+    </template>
+    <template #light="props">
+      <img src="https://astro.build/assets/press/astro-logo-dark.svg" v-bind="props"/>
+    </template>
+  </LightOrDark>
+</div>
+
+<img v-click src="https://images.icon-icons.com/2699/PNG/512/docusaurus_logo_icon_171229.png" alt="docusaurus logo">
+
+<div v-click>
+  <LightOrDark width="100" alt="jekyll logo">
+    <template #dark="props">
+      <img src="https://happycoding.io/tutorials/html/images/jekyll-6.png" v-bind="props"/>
+    </template>
+    <template #light="props">
+      <img src="https://nelbren.com/assets/images/posts/jekyll-logo.png" v-bind="props"/>
+    </template>
+  </LightOrDark>
+</div>
+
+<style>
+.slidev-layout {
+  grid-template-columns: 3fr 2fr;
+}
+</style>
+
+---
 transition: slide-up
 ---
 
-<<< @/snippets/initial-frontmatter.md {all|1-2|3-5|6-11|12-13}
+<<< @/snippets/initial-frontmatter.md {all|1-2|3-5|6-11|12-13}{lines: true}
+
 
 ---
 layout: two-cols
@@ -118,12 +211,15 @@ transition: slide-down
 layoutClass: gap-3xl
 ---
 
-# ¿Qué es UnoCSS?
+# UnoCSS
 
-Es un engine para generar atomic CSS. Está fuertemente inspirado en Windi CSS (que a su vez se autoproclamó como "la alternativa on-demand a Tailwind")
+Engine para generar Atomic CSS
 
+Fuertemente inspirado en Windi CSS (a su vez autoproclamado como _"la alternativa on-demand a Tailwind"_)
 
-````md magic-move {lines: true}
+La forma tradicional de construir Atomic CSS es proveer todas las utility classes que puedas llegar a necesitar con un preprocesador, por ejemplo:
+
+````md magic-move {lines: false}
 
 ```scss
 // style.scss
@@ -138,7 +234,13 @@ Es un engine para generar atomic CSS. Está fuertemente inspirado en Windi CSS (
 ```scss
 .m-1 { margin: 0.25 rem; }
 .m-2 { margin: 0.5 rem; }
-/* ... */
+.m-3 { margin: 0.75 rem; }
+.m-4 { margin: 1 rem; }
+.m-5 { margin: 1.25 rem; }
+.m-6 { margin: 1.5 rem; }
+.m-7 { margin: 1.75 rem; }
+.m-8 { margin: 2 rem; }
+.m-9 { margin: 2.25 rem; }
 .m-10 { margin: 2.5 rem; }
 ```
 
@@ -146,13 +248,41 @@ Es un engine para generar atomic CSS. Está fuertemente inspirado en Windi CSS (
 
 ::right::
 
-<img src="https://antfu.me/images/unocss-traditional-way.png" />
+::div{v-click}
+<span class="rotor"><twemoji-thinking-face v-motion /></span> ¿Y si queremos otros aliases como `mt` para `margin-top` y `mb` para `margin-bottom`? ¿O implementar variantes con `:hover` y `:focus`?
+::
+
+::div{v-click class="my-4"}
+Para combatir los MBs de CSS generados, Tailwind llegó a la solución de usar [PurgeCSS](https://purgecss.com/) para escanear el bundle y remover las reglas que no estás usando
+::
+
+<img class="my-8" v-after src="https://antfu.me/images/unocss-traditional-way.png" />
+
+::div{v-click}
+En cambio, la forma "on demand" invierte el orden de estos pasos y hace un pre-escaneo del código
+::
+
+<style>
+@keyframes spinAlternate {
+  from {
+  transform: rotate(-50deg);
+  }
+  to {
+    transform: rotate(50deg);
+  }
+}
+
+.rotor {
+  display: inline-block;
+  animation: spinAlternate 1s linear infinite alternate;
+}
+</style>
 
 ---
 transition: slide-up
 ---
 
-<<< @/snippets/initial-frontmatter.md {14-16|17-18|19-20}
+<<< @/snippets/initial-frontmatter.md {14-16|17-18|19-20}{lines: true}
 
 ---
 transition: slide-down
@@ -202,7 +332,7 @@ transition: slide-down
 transition: slide-left
 ---
 
-<<< @/snippets/initial-frontmatter.md {22-26}
+<<< @/snippets/initial-frontmatter.md {22-26}{lines: true}
 
 ---
 transition: fade-out
